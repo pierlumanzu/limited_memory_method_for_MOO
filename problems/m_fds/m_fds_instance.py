@@ -3,6 +3,13 @@ import tensorflow as tf
 
 from problems.m_fds.m_fds_class import MFDS
 
+'''
+For more details about the FDS problem, the user is referred to 
+
+Fliege, J., Drummond, L.G., Svaiter, B.F.: Newton’s method for multi-
+objective optimization. SIAM Journal on Optimization 20(2), 602–626
+(2009). https://doi.org/10.1137/08071692X.
+'''
 
 class MFDS1(MFDS):
 

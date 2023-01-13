@@ -3,6 +3,13 @@ import tensorflow as tf
 
 from problems.man.man_class import MAN
 
+'''
+For more details about the MAN1 problem, the user is referred to 
+
+Lapucci, M., Mansueto, P., Schoen, F.: A memetic procedure for global
+multi-objective optimization. Mathematical Programming Computation
+(2022). https://doi.org/10.1007/s12532-022-00231-3.
+'''
 
 class MMAN1(MAN):
 
