@@ -23,7 +23,7 @@ In order to run some parts of the code, the [Gurobi](https://www.gurobi.com/) Op
 
 In ```parser_management.py``` you can find all the possible arguments. Given a terminal (Anaconda Prompt for Windows users), an example of execution could be the following.
 
-```python main.py --algorithms LMQNWT --problems JOS --seeds 16007 --num_trials 100 --max_time 2 --verbose --plot_pareto_front --plot_pareto_solutions --general_export --export_pareto_solutions```
+```python main.py --algs LMQNWT --probs JOS --seeds 16007 --num_trials 100 --max_time 2 --plot_pareto_front --plot_pareto_solutions --general_export --export_pareto_solutions```
 
 ### Contact
 

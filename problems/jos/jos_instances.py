@@ -16,8 +16,8 @@ class JOS1a(JOS):
             tf.reduce_sum([(self._z[i] - 2) ** 2 for i in range(self.n)]) / self.n
         ])
 
-        self.filtered_lb_for_ini = -1 * np.ones(self.n)
-        self.filtered_ub_for_ini = 1 * np.ones(self.n)
+        self.filtered_lb_for_ini = -10 * np.ones(self.n)
+        self.filtered_ub_for_ini = 10 * np.ones(self.n)
 
     @staticmethod
     def name():
