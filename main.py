@@ -104,7 +104,13 @@ for cycle_item in cycle_items:
                             write_results_in_csv_file_front_mode(p_list, f_list, cycle_item, date, algorithm_name, problem, export_pareto_solutions=general_settings['export_pareto_solutions'])
                         else:
                             write_results_in_csv_file_local_search_mode(p_list, f_list, elapsed_time, n_iterations, n_f_evals, n_g_evals, n_h_evals, thetas, cycle_item, date, algorithm_name, problem, export_pareto_solutions=general_settings['export_pareto_solutions'])
-                        save_plots(p_list, f_list, cycle_item, date, algorithm_name, problem, general_settings['export_pareto_solutions'], general_settings['plot_dpi'])
+                        try:
+                            save_plots(p_list, f_list, cycle_item, date, algorithm_name, problem, general_settings['export_pareto_solutions'], general_settings['plot_dpi'])
+                        except OverflowError:
+                            not_overflow_inducing_indices = np.where(np.all(f_list <= 1e300, axis=1))[0]
+                            p_list = p_list[not_overflow_inducing_indices, :]
+                            f_list = f_list[not_overflow_inducing_indices, :]
+                            save_plots(p_list, f_list, cycle_item, date, algorithm_name, problem, general_settings['export_pareto_solutions'], general_settings['plot_dpi'])
 
                     if general_settings['verbose']:
                         progress_bar.increment_current_value()
