@@ -1,6 +1,8 @@
 from nsma.algorithms.gradient_based.local_search_algorithms.fmopg import FMOPG
 
+from direction_solvers.direction_solver_factory import DirectionSolverFactory
 from line_searches.line_search_factory import LineSearchFactory
+
 
 class WolfeBasedFMOPG(FMOPG):
 
@@ -23,4 +25,5 @@ class WolfeBasedFMOPG(FMOPG):
                        max_time,
                        max_f_evals)
 
+        self._direction_solver = DirectionSolverFactory.get_direction_calculator('SteepestDirectionForFMOPG', False, gurobi_method, gurobi_verbose)
         self._line_search = LineSearchFactory.get_line_search('MOWLS', args_line_search)

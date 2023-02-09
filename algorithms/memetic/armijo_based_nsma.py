@@ -1,5 +1,7 @@
 from nsma.algorithms.memetic.nsma import NSMA
 
+from algorithms.gradient_based.armijo_based_fmopg import ArmijoBasedFMOPG
+
 
 class ArmijoBasedNSMA(NSMA):
 
@@ -34,10 +36,12 @@ class ArmijoBasedNSMA(NSMA):
                       pop_size,
                       crossover_probability, crossover_eta, mutation_eta,
                       shift, crowding_quantile,
-                      n_opt, FMOPG_max_iter,
+                      n_opt, 0,
                       theta_for_stationarity, theta_tol, theta_dec_factor,
                       True, gurobi_method, gurobi_verbose,
-                      args_line_search['ALS_alpha_0'], args_line_search['ALS_delta'], args_line_search['ALS_beta'], args_line_search['ALS_min_alpha'])
+                      0, 0, 0, 0)
+
+        self._local_search_optimizer = ArmijoBasedFMOPG(theta_tol, gurobi_method, gurobi_verbose, args_line_search, FMOPG_max_iter, max_time, max_f_evals)
 
     @staticmethod
     def objectives_powerset(m: int):

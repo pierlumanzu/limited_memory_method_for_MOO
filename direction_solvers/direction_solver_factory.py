@@ -1,4 +1,5 @@
 from direction_solvers.descent_direction.steepest_direction import SteepestDirection
+from direction_solvers.descent_direction.steepest_direction_for_fmopg import SteepestDirectionForFMOPG
 from direction_solvers.descent_direction.nwt_direction import NWTDirection
 from direction_solvers.descent_direction.qnwt_direction import QNWTDirection
 from direction_solvers.descent_direction.mqnwt_direction import MQNWTDirection
@@ -12,6 +13,9 @@ class DirectionSolverFactory:
 
         if direction_type == 'SteepestDirection':
             return SteepestDirection(verbose, gurobi_method, gurobi_verbose)
+
+        elif direction_type == 'SteepestDirectionForFMOPG':
+            return SteepestDirectionForFMOPG(verbose, gurobi_method, gurobi_verbose)
 
         elif direction_type == 'NWTDirection':
             return NWTDirection(verbose, gurobi_method, gurobi_verbose)

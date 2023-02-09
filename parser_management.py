@@ -117,7 +117,7 @@ def get_args():
 
     parser.add_argument('--NSMA_n_opt', help='NSMA parameter -- Number of iterations before doing optimization', default=5, type=int)
 
-    parser.add_argument('--NSMA_FMOPG_max_iter', help='NSMA parameter -- Number of maximum iterations for FMOPG', default=5, type=int)
+    parser.add_argument('--NSMA_FMOPG_max_iter', help='NSMA parameter -- Number of maximum iterations for FMOPG', default=10, type=int)
 
     parser.add_argument('--NSMA_theta_for_stationarity', help='NSMA parameter -- Theta for Pareto stationarity', default=-1.0e-10, type=float)
 
@@ -129,7 +129,7 @@ def get_args():
     ### LMQNWTBasedNSMA exclusives ###
     ####################################################
 
-    parser.add_argument('--LMQNWTBasedNSMA_LMQNWT_max_iter', help='LMQNWTBasedNSMA parameter -- Number of maximum iterations for LMQNWT', default=5, type=int)
+    parser.add_argument('--LMQNWTBasedNSMA_LMQNWT_max_iter', help='LMQNWTBasedNSMA parameter -- Number of maximum iterations for LMQNWT', default=10, type=int)
 
     parser.add_argument('--LMQNWTBasedNSMA_LMQNWT_max_cor', help='LMQNWTBasedNSMA parameter -- Number of maximum memory for LMQNWT', default=5, type=int)
 
