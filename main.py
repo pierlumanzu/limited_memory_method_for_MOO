@@ -88,6 +88,7 @@ for cycle_item in cycle_items:
                                                                WLS_settings=WLS_settings)
 
                     if front_mode:
+                        np.random.seed(cycle_item)
                         p_list, f_list, elapsed_time = algorithm.search(np.copy(initial_p_list), np.copy(initial_f_list), problem_instance)
                         p_list, f_list = points_postprocessing(np.copy(p_list), np.copy(f_list), problem_instance)
                     else:
