@@ -19,7 +19,7 @@ class SteepestDirectionForFMOPG(ExtendedDDS, GurobiSettings):
         P = np.dot(Jac, Jac.T)
 
         if np.isinf(Jac).any() or np.isnan(Jac).any():
-            return np.zeros(n), 0, np.zeros(m)
+            return np.zeros(n), 0
 
         try:
             model = Model("Steepest Direction -- Dual Problem")
@@ -46,14 +46,14 @@ class SteepestDirectionForFMOPG(ExtendedDDS, GurobiSettings):
                 d_p = -np.dot(Jac.T, sol).flatten()
                 theta_p = -model.getObjective().getValue()
             else:
-                return np.zeros(n), 0, np.zeros(m)
+                return np.zeros(n), 0
 
         except GurobiError:
             if self._verbose:
                 print('Gurobi Error')
-            return np.zeros(n), 0, np.zeros(m)
+            return np.zeros(n), 0
 
         except AttributeError:
-            return np.zeros(n), 0, np.zeros(m)
+            return np.zeros(n), 0
 
         return d_p, theta_p
