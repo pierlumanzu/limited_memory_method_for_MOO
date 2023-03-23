@@ -5,6 +5,28 @@
 ![Alt Text](README_Front_Image.gif)
 ## LM-Q-NWT: A Limited Memory Quasi-Newton Approach for Multi-Objective Optimization
 
+Implementation of the LM-Q-NWT Algorithm proposed in
+
+[Lapucci, M., Mansueto, P. A limited memory Quasi-Newton approach for multi-objective optimization. Comput Optim Appl (2023).](
+https://doi.org/10.1007/s10589-023-00454-7)
+
+If you have used our code for research purposes, please cite the publication mentioned above.
+For the sake of simplicity, we provide the Bibtex format:
+
+```
+@Article{Lapucci2023,
+    author={Lapucci, Matteo and Mansueto, Pierluigi},
+    title={A limited memory Quasi-Newton approach for multi-objective optimization},
+    journal={Computational Optimization and Applications},
+    year={2023},
+    month={Mar},
+    day={02},
+    issn={1573-2894},
+    doi={10.1007/s10589-023-00454-7},
+    url={https://doi.org/10.1007/s10589-023-00454-7}
+}
+```
+
 ### Main Dependencies Installation
 
 In order to execute the code, you need an [Anaconda](https://www.anaconda.com/) environment and the Python package [nsma](https://pypi.org/project/nsma/) installed in it. For a detailed documentation of this framework, we refer the reader to its [GitHub repository](https://github.com/pierlumanzu/nsma).
